@@ -1,0 +1,403 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+:root {
+    --primary-color: #FF5722;
+    --secondary-color: #212529;
+    --accent-color: #FFC107;
+    --light-gray: #f8f9fa;
+    --dark-blue: #0D1B2A;
+
+    --background-color: #fff;
+    --background-color-rgb: 255, 255, 255;
+    --text-color: #333;
+    --text-muted: #6c757d;
+    --card-bg: #fff;
+    --shadow-color: rgba(0,0,0,.1);
+    /* Hero defaults (light) */
+    --hero-start: #ffffff; /* light hero start */
+    --hero-end: #f3f6fb;  /* light hero end */
+    --hero-text: #0f172a; /* dark text on light hero */
+}
+
+[data-theme="dark"] {
+    --background-color: #0b1220; /* deep night */
+    --background-color-rgb: 11, 18, 32;
+    --text-color: #e6ebf5; /* soft off-white */
+    --text-muted: #9aa4b2; /* cool gray */
+    --card-bg: #111827; /* near-slate surface */
+    --secondary-color: #0f172a; /* slate-900 */
+    --shadow-color: rgba(0, 0, 0, .6);
+    /* Hero colors (dark) */
+    --hero-start: #0b1220;
+    --hero-end: #0f172a;
+    --hero-text: #e6ebf5;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #E64A19;
+    border-color: #E64A19;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+/*--------------------------------------------------------------
+# Navbar
+--------------------------------------------------------------*/
+.navbar {
+    transition: all 0.3s ease;
+    background-color: var(--background-color);
+}
+
+.navbar.shrink {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(var(--background-color-rgb), 0.9) !important;
+    backdrop-filter: blur(10px);
+}
+
+[data-theme="dark"] .navbar-light .navbar-nav .nav-link {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .navbar-light .navbar-brand {
+    color: var(--text-color);
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+[data-theme="dark"] .bg-light {
+    background-color: var(--secondary-color) !important;
+}
+
+[data-theme="dark"] .bg-white {
+    background-color: var(--card-bg) !important;
+}
+
+[data-theme="dark"] .shadow-sm {
+    box-shadow: 0 .125rem .25rem var(--shadow-color) !important;
+}
+
+[data-theme="dark"] .card {
+    background-color: var(--card-bg);
+    border-color: var(--secondary-color);
+}
+
+[data-theme="dark"] .text-dark,
+[data-theme="dark"] .link-dark {
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .border-top {
+    border-top-color: var(--secondary-color) !important;
+}
+
+[data-theme="dark"] .text-muted {
+    color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .form-control {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--secondary-color);
+}
+
+[data-theme="dark"] .form-control:focus {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(255, 87, 34, 0.25);
+}
+
+[data-theme="dark"] .form-select {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--secondary-color);
+}
+
+.navbar-toggler-icon {
+    background-image: none;
+    width: 1.5em;
+    height: 1.5em;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.55)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+[data-theme="dark"] .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.55)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+#hero {
+    background: linear-gradient(135deg, var(--hero-start), var(--hero-end));
+    color: var(--hero-text);
+    padding-top: 150px; /* Navbar için boşluk bırak */
+    min-height: 100vh; /* Ekranı kaplaması için */
+    display: flex;
+    align-items: center;
+}
+
+/* Hero buton kontrastları tema bazlı */
+[data-theme="light"] #hero .btn-outline-light {
+    color: #0f172a;
+    border-color: #0f172a;
+}
+[data-theme="light"] #hero .btn-outline-light:hover {
+    background-color: #0f172a;
+    color: #ffffff;
+}
+[data-theme="dark"] #hero .btn-outline-light {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+[data-theme="dark"] #hero .btn-outline-light:hover {
+    background-color: #ffffff;
+    color: #0b1220;
+}
+
+/*--------------------------------------------------------------
+# Service Cards
+--------------------------------------------------------------*/
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
+
+/*--------------------------------------------------------------
+# Brands
+--------------------------------------------------------------*/
+.brands .logos-wrapper {
+    overflow: hidden;
+}
+
+.brands .logos {
+    animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.brands .logos img {
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.brands .logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Metin bazlı marka çipleri */
+.brand-chip {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 9999px;
+    background: #e9ecef;
+    color: #495057;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+[data-theme="dark"] .brand-chip {
+    background: #2a2a2a;
+    color: #ddd;
+}
+
+/* Galeri modal görsel boyutlandırma */
+#galleryModalImg {
+    max-width: 95vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.45);
+}
+
+/* Sertifikalı Operatörler ikonuna tik yerleşimi */
+.icon-with-check {
+    position: relative;
+    line-height: 1;
+}
+.icon-with-check::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1.25em; /* hole size relative to icon */
+    height: 1.25em;
+    background: var(--card-bg); /* match card surface so içi boş görünür */
+    border-radius: 50%;
+    z-index: 1;
+}
+.icon-with-check .check-overlay {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    color: var(--accent-color);
+    z-index: 2;
+}
+
+/*--------------------------------------------------------------
+# Project Carousel
+--------------------------------------------------------------*/
+.carousel-item img {
+    max-height: 600px;
+    object-fit: cover;
+}
+
+/*--------------------------------------------------------------
+# Features
+--------------------------------------------------------------*/
+.feature:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/*--------------------------------------------------------------
+# Contact Form
+--------------------------------------------------------------*/
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(255, 87, 34, 0.25);
+}
+
+/*--------------------------------------------------------------
+# WhatsApp FAB
+--------------------------------------------------------------*/
+.whatsapp-fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-fab:hover {
+    transform: scale(1.1);
+}
+
+/* Galeri görüntüleri küçük ekranlarda daha kare dursun */
+#gallery-grid a { aspect-ratio: 1 / 1; }
+.gallery-caption {
+    display: block;
+    width: 100%;
+    background: #e11d2e; /* kırmızı şerit stili */
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-weight: 800;
+    letter-spacing: .2px;
+    text-transform: uppercase;
+    white-space: normal;
+    word-wrap: break-word;
+}
+[data-theme="dark"] .gallery-caption { background: #dc2626; }
+
+/* Sağ kenar iletişim rayı */
+.contact-rail {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 2000;
+}
+
+/* Masaüstü ve mobilde sağ kenar */
+@media (min-width: 992px) {
+    .contact-rail { right: 0; left: auto; }
+}
+.contact-rail .rail-tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 120px; /* kompakt genişlik */
+    height: 40px; /* kompakt yükseklik */
+    padding: 0 10px;
+    border-radius: 10px 0 0 10px;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(0,0,0,.25);
+    margin-left: auto;
+    font-weight: 600;
+    transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+    animation: railFloat 3s ease-in-out infinite alternate;
+}
+.contact-rail .rail-tab .label { white-space: nowrap; font-size: .8rem; line-height: 1; }
+.contact-rail .rail-arrow { background: #111; }
+.contact-rail .rail-wa { background: #25D366; }
+.contact-rail .rail-call { background: #0d6efd; }
+.contact-rail .rail-tab i { font-size: 1.3rem; }
+
+/* Yatay içerik: ikon + yazı */
+.contact-rail .rail-wa,
+.contact-rail .rail-call { flex-direction: row; width: 120px; height: 40px; }
+.contact-rail .rail-arrow { width: 120px; height: 40px; border-radius: 10px 0 0 10px; justify-content: center; }
+
+.contact-rail .rail-tab:hover { transform: translateX(-6px); box-shadow: 0 10px 24px rgba(0,0,0,.35); }
+.contact-rail .rail-tab:active { filter: brightness(.95); }
+
+@keyframes railFloat {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-4px); }
+}
+
+.contact-rail .rail-tab:nth-child(2) { animation-delay: .15s; }
+.contact-rail .rail-tab:nth-child(3) { animation-delay: .3s; }
+
+@media (max-width: 576px) {
+    .contact-rail { top: 45%; }
+    .contact-rail .rail-tab { width: 120px; height: 40px; font-weight: 600; }
+    .contact-rail .rail-wa, .contact-rail .rail-call { width: 120px; height: 40px; }
+    .contact-rail .rail-tab .label { font-size: .8rem; }
+    .contact-rail .rail-tab i { font-size: 1rem; }
+    .contact-rail .rail-arrow { width: 120px; height: 40px; }
+    .whatsapp-fab { display: none; }
+}
+
+
