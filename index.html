@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Bereket Vinç & Platform | Profesyonel Vinç Kiralama Hizmetleri</title>
     <meta name="description" content="Mobil vinç kiralama, sepetli vinç, ağır yük kaldırma, endüstriyel taşıma ve montaj. Sertifikalı operatörler, modern filo, 7/24 destek.">
     <meta name="theme-color" content="#ffffff">
@@ -28,6 +28,13 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü Aç">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Tema butonu: her zaman görünür (mobil ve masaüstü) -->
+            <div class="d-flex align-items-center ms-auto ms-lg-3">
+                <button id="theme-toggle" class="btn btn-link" type="button" aria-label="Tema Değiştir">
+                    <i class="fa-solid fa-sun" id="theme-toggle-sun"></i>
+                    <i class="fa-solid fa-moon d-none" id="theme-toggle-moon"></i>
+                </button>
+            </div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                     <li class="nav-item"><a class="nav-link" href="#hakkimizda">Hakkımızda</a></li>
@@ -35,14 +42,6 @@
                     <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
                     <li class="nav-item"><a class="nav-link" href="#hizmet-bolgeleri">Hizmet Bölgeleri</a></li>
                     <li class="nav-item"><a class="nav-link" href="#nedenbiz">Neden Biz</a></li>
-                    
-                    
-                    <li class="nav-item">
-                        <button id="theme-toggle" class="btn btn-link nav-link" type="button">
-                            <i class="fa-solid fa-sun" id="theme-toggle-sun"></i>
-                            <i class="fa-solid fa-moon d-none" id="theme-toggle-moon"></i>
-                        </button>
-                    </li>
                     <li class="nav-item"><a class="btn btn-warning ms-lg-2" href="#iletisim">Teklif Al</a></li>
                 </ul>
             </div>
